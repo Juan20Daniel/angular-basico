@@ -1,0 +1,13 @@
+<div class="row">
+  <h4>Personajes de bob esponja</h4>
+  <hr />
+  <div class="col">
+    <bobesponja-list
+      [caracters]="characters"
+      (onDeleteCharacter)="onDeleteCharacter($event)"
+    />
+  </div>
+  <div class="col">
+    <bobesponja-form (onNewCharacter)="onNewCharacter($event)" />
+  </div>
+</div>

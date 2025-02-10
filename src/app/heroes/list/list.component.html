@@ -1,0 +1,20 @@
+<h3>Lista de pendejos</h3>
+<div *ngIf="heroDeleted; else nothingWasDeleted">
+  <h3 *ngIf="heroDeleted">
+    Pendejo eliminado:
+    <small class="text-danger">
+      {{heroDeleted}}
+    </small>
+  </h3>
+</div>
+<ng-template #nothingWasDeleted>
+  <h3 *ngIf="!heroDeleted">
+    No ha borradon nada el pendejo
+  </h3>
+</ng-template>
+<button *ngIf="heroNames.length > 0" class="btn btn-danger" (click)="remove()">
+  Borrar al ultimo pendejo
+</button>
+<ul class="mt-2 list-group">
+  <li class="list-group-item" *ngFor="let item of heroNames">{{item}}</li>
+</ul>
